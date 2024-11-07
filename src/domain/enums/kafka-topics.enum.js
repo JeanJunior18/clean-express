@@ -3,7 +3,7 @@
  * @enum {string}
  */
 const MessageStatusEnum = Object.freeze({
-  CANONICAL_MESSAGE: "CANONICAL_MESSAGE",
-});
+  CANONICAL_MESSAGE: 'CANONICAL_MESSAGE'
+})
 
 export default MessageStatusEnum

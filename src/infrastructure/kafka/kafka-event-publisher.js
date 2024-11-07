@@ -1,13 +1,13 @@
-import EventEmitter from "../../domain/interfaces/event-emitter.js"
+import EventEmitter from '../../domain/interfaces/event-emitter.js'
 
 export default class KafkaEventPublisher extends EventEmitter {
-  constructor() { 
+  constructor() {
     super()
   }
 
   /**
-   * @param {string} eventName 
-   * @param {unknown} payload 
+   * @param {string} eventName
+   * @param {unknown} payload
    */
   async publish(eventName, data) {
     console.log('Publicar evento', eventName, 'com os dados', data)
