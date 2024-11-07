@@ -23,6 +23,17 @@ app.use('/message', CanonicalMessageController)
 const swaggerSpec = swaggerJSDoc(options)
 app.use('/api', swagger.serve, swagger.setup(swaggerSpec))
 
+app.use((req, res) => {
+  res.status(404).send('Route not found')
+})
+
 app.listen(3000, () => {
   console.log('Server is running on PORT 3000')
+})
+
+process.on('uncaughtException', (error) => {
+  console.error('Exceção não capturada:', error)
+})
+process.on('unhandledRejection', (reason) => {
+  console.error('Promessa não tratada rejeitada:', reason)
 })
